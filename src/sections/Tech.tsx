@@ -1,10 +1,13 @@
 import React from 'react';
+import TechUsed from '../components/TechUsed';
 import '../styles/section.css';
 
 const Tech: React.FC = () => (
   <section id="tech">
-    <h2>Tech Used</h2>
-    <p>Definitely want to populate from JSON with pngs and names</p>
+    <div className="container">
+      <TechUsed />
+    </div>
+
   </section>
 );
 

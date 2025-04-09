@@ -1,83 +1,83 @@
 {
   "tech": [
     {
-      "image": "./assets/Azure.png",
+      "image": "/assets/angular.png",
       "desc": "Azure"
     },
     {
-      "image": "./assets/bootstrap-logo.png",
+      "image": "/assets/bootstrap-logo.png",
       "desc": "Bootstrap"
     },
     {
-      "image": "./assets/csharp.png",
+      "image": "/assets/csharp.png",
       "desc": "C#"
     },
     {
-      "image": "./assets/css3.png",
+      "image": "/assets/css3.png",
       "desc": "CSS3"
     },
     {
-      "image": "./assets/eslint.svg.png",
+      "image": "/assets/eslint.svg.png",
       "desc": "ESlint"
     },
     {
-      "image": "./assets/firebase.png",
+      "image": "/assets/firebase.png",
       "desc": "Firebase"
     },
     {
-      "image": "./assets/github.png",
+      "image": "/assets/github.png",
       "desc": "Github"
     },
     {
-      "image": "./assets/grunt-logo.png",
+      "image": "/assets/grunt-logo.png",
       "desc": "Grunt"
     },
     {
-      "image": "./assets/html.png",
+      "image": "/assets/html.png",
       "desc": "HTML5"
     },
     {
-      "image": "./assets/java.png",
+      "image": "/assets/java.png",
       "desc": "JavaScript"
     },
     {
-      "image": "./assets/jquery.png",
+      "image": "/assets/jquery.png",
       "desc": "jQuery"
     },
     {
-      "image": "./assets/json.png",
+      "image": "/assets/json.png",
       "desc": "JSON"
     },
     {
-      "image": "./assets/npm.png",
+      "image": "/assets/npm.png",
       "desc": "node.js"
     },
     {
-      "image": "./assets/postman.png",
+      "image": "/assets/postman.png",
       "desc": "Postman"
     },
     {
-      "image": "./assets/react.png",
+      "image": "/assets/react.png",
       "desc": "React"
     },
     {
-      "image": "./assets/sass.png",
+      "image": "/assets/sass.png",
       "desc": "Sass"
     },
     {
-      "image": "./assets/sql.png",
+      "image": "/assets/sql.png",
       "desc": "SQL"
     },
     {
-      "image": "./assets/svelte.png",
+      "image": "/assets/svelte.png",
       "desc": "Svelte 5"
     },
     {
-      "image": "./assets/typescript.png",
+      "image": "/assets/typescript.png",
       "desc": "TypeScript"
     },
     {
-      "image": "./assets/vite.png",
+      "image": "/assets/vite.png",
       "desc": "Vite"
     }
   ]
