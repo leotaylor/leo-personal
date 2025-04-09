@@ -4,10 +4,10 @@ import WordCloudComponent from '../components/WordCloud';
 const Testimonials: React.FC = () => {
 
   return (
-    <div>
+    <section id="testimonials">
       <h2>Word Cloud Example</h2>
       <WordCloudComponent />
-    </div>
+    </section>
   );
 };
 
