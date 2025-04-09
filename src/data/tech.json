@@ -1,0 +1,84 @@
+{
+  "tech": [
+    {
+      "image": "./assets/Azure.png",
+      "desc": "Azure"
+    },
+    {
+      "image": "./assets/bootstrap-logo.png",
+      "desc": "Bootstrap"
+    },
+    {
+      "image": "./assets/csharp.png",
+      "desc": "C#"
+    },
+    {
+      "image": "./assets/css3.png",
+      "desc": "CSS3"
+    },
+    {
+      "image": "./assets/eslint.svg.png",
+      "desc": "ESlint"
+    },
+    {
+      "image": "./assets/firebase.png",
+      "desc": "Firebase"
+    },
+    {
+      "image": "./assets/github.png",
+      "desc": "Github"
+    },
+    {
+      "image": "./assets/grunt-logo.png",
+      "desc": "Grunt"
+    },
+    {
+      "image": "./assets/html.png",
+      "desc": "HTML5"
+    },
+    {
+      "image": "./assets/java.png",
+      "desc": "JavaScript"
+    },
+    {
+      "image": "./assets/jquery.png",
+      "desc": "jQuery"
+    },
+    {
+      "image": "./assets/json.png",
+      "desc": "JSON"
+    },
+    {
+      "image": "./assets/npm.png",
+      "desc": "node.js"
+    },
+    {
+      "image": "./assets/postman.png",
+      "desc": "Postman"
+    },
+    {
+      "image": "./assets/react.png",
+      "desc": "React"
+    },
+    {
+      "image": "./assets/sass.png",
+      "desc": "Sass"
+    },
+    {
+      "image": "./assets/sql.png",
+      "desc": "SQL"
+    },
+    {
+      "image": "./assets/svelte.png",
+      "desc": "Svelte 5"
+    },
+    {
+      "image": "./assets/typescript.png",
+      "desc": "TypeScript"
+    },
+    {
+      "image": "./assets/vite.png",
+      "desc": "Vite"
+    }
+  ]
+}

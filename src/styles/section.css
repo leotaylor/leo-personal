@@ -1,0 +1,12 @@
+section {
+  padding: 4rem 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+  scroll-margin-top: 80px; /* offsets scroll for sticky header */
+}
+
+@media (min-width: 768px) {
+  section {
+    padding: 6rem 2rem;
+  }
+}
