@@ -16,7 +16,7 @@ const Header: React.FC = () => {
               <li><ScrollLink to="about" smooth={true} duration={500}>About</ScrollLink></li>
               <li><ScrollLink to="testimonials" smooth={true} duration={500}>Testimonials</ScrollLink></li>
               <li><ScrollLink to="tech" smooth={true} duration={500}>Tech Used</ScrollLink></li>
-              <li><ScrollLink to="FunFacts" smooth={true} duration={500}>Fun Facts</ScrollLink></li>
+              <li><ScrollLink to="funFacts" smooth={true} duration={500}>Fun Facts</ScrollLink></li>
               <li><Link to="/blog">Blog</Link></li> {/* Blog link on the homepage */}
             </>
           ) : (

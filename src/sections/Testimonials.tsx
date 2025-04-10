@@ -5,8 +5,9 @@ const Testimonials: React.FC = () => {
 
   return (
     <section id="testimonials">
-      <h2>Word Cloud Example</h2>
+      <h1>Testimonials</h1>
       <WordCloudComponent />
+      <p>* words pulled from actual performance reviews</p>
     </section>
   );
 };

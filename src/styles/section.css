@@ -1,9 +1,29 @@
 section {
   padding: 4rem 1rem;
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
-  scroll-margin-top: 80px; /* offsets scroll for sticky header */
+  scroll-margin-top: 80px;
+  /* offsets scroll for sticky header */
 }
+
+section.splash-section {
+  max-width: 100%;
+  height: 100vh;
+  background-image: url('/assets/stars.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.fade-in-section {
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.fade-in-section.visible {
+  opacity: 1;
+}
+
 
 @media (min-width: 768px) {
   section {
