@@ -7,7 +7,7 @@ const Splash: React.FC = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(true);
-    }, 100);
+    }, 400);
 
     return () => clearTimeout(timer);
   }, []);
