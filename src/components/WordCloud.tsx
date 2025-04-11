@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import WordCloud, { Options } from 'react-wordcloud';
 
 interface Word {
@@ -51,7 +51,7 @@ const options: Options = {
   padding: 5,
   rotations: 3,
   rotationAngles: [0, 90],
-  deterministic: false,
+  deterministic: true,
   enableTooltip: false,
   enableOptimizations: true,
   fontStyle: 'normal',
@@ -63,20 +63,20 @@ const options: Options = {
 };
 
 const WordCloudComponent: React.FC = () => {
-  const [key, setKey] = useState(0);
+  // const [key, setKey] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setKey((prevKey) => prevKey + 1); // change key to force re-render
-    }, 20000);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setKey((prevKey) => prevKey + 1); // change key to force re-render
+  //   }, 20000);
 
-    return () => clearInterval(interval);
-  }, []);
+  //   return () => clearInterval(interval);
+  // }, []);
 
   return (
     <div style={{ width: '100%', height: '600px' }}>
       <WordCloud
-        key={key}
+        // key={key}
         words={wordsToDisplay}
         callbacks={callbacks}
         options={options}

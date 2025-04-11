@@ -1,0 +1,56 @@
+.kirby-fly {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100px;
+  z-index: 9999;
+  animation: flyDiagonal 5s ease-out forwards;
+  pointer-events: none;
+}
+
+/* Diagonal animation (no fade-out) */
+@keyframes flyDiagonal {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(100vw, -100vh); /* Diagonal path */
+  }
+}
+
+/* Sparkle trails */
+.kirby-fly::before,
+.kirby-fly::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(255,255,255,0.8) 10%, transparent 90%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  border-radius: 50%;
+  opacity: 0.5;
+  filter: blur(6px);
+  animation: sparkleTrail 0.6s infinite alternate;
+  animation-timing-function: ease-out;
+}
+
+.kirby-fly::after {
+  width: 100px;
+  height: 100px;
+  animation-delay: 0.1s;
+  opacity: 0.4;
+}
+
+@keyframes sparkleTrail {
+  from {
+    transform: translate(-50%, -50%) scale(0.6);
+    opacity: 0.5;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1.4);
+    opacity: 0.2;
+  }
+}
