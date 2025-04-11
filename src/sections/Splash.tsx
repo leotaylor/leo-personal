@@ -17,9 +17,10 @@ const Splash: React.FC = () => {
       className='splash-section'
     >
       <div className={`fade-in-section ${isVisible ? 'visible' : ''}`}>
-        <h1>Welcome to My Personal Site</h1>
+        <h1>Developer. Mentor. Human.</h1>
         <p>Get to know more about me, my work, and my journey in tech.</p>
         <a href="#about" className="cta-button">Learn More</a>
+        <h1 className='name'>LEO TAYLOR</h1>
       </div>
     </section>
   );
