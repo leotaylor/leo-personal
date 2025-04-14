@@ -18,6 +18,7 @@ import './index.css';
 const App: React.FC = () => {
   const [hoverColor, setHoverColor] = useState<string | null>(null);
   const [sectionBgImage, setSectionBgImage] = useState<string | null>(null);
+  const [titleColor, setTitleColor] = useState<string | null>(null);
 
 
   return (
@@ -34,8 +35,14 @@ const App: React.FC = () => {
                 <About />
                 <Testimonials />
                 <Tech />
-                <FunFacts setHoverColor={setHoverColor} hoverColor={hoverColor} setSectionBgImage={setSectionBgImage} sectionBgImage={sectionBgImage} />
-              </>
+                <FunFacts
+                  setHoverColor={setHoverColor}
+                  hoverColor={hoverColor}
+                  setSectionBgImage={setSectionBgImage}
+                  sectionBgImage={sectionBgImage}
+                  setTitleColor={setTitleColor}
+                  titleColor={titleColor}
+                />              </>
             }
           />
           <Route path="/blog" element={<Blog />} />

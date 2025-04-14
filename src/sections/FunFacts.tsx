@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import '../styles/FunFacts.css';
 
 type FunFact = {
@@ -9,6 +9,7 @@ type FunFact = {
   clue?: string;
   tooltip?: string;
   sectionBgImage?: string;
+  titleColor?: string;
 };
 
 const funFacts: FunFact[] = [
@@ -33,6 +34,7 @@ const funFacts: FunFact[] = [
     bgColor: '#ffca3a',
     clue: 'Do you know the Konami code?',
     tooltip: 'up up down down left right left right b a',
+    titleColor: '#242424',
   },
   {
     title: 'Fantasy Football',
@@ -42,6 +44,7 @@ const funFacts: FunFact[] = [
     clue: 'See More...',
     tooltip: " You may find me deep in spreadsheets, analyzing stats and trends, looking for that edge. I even made a draft day helper app just to get a competitive advantage. When it's time for the season to start, I'm ready to leave my competition in the dust.",
     sectionBgImage: '/assets/football-field.png',
+    titleColor: '#242424',
   }
 ];
 
@@ -50,9 +53,24 @@ interface FunFactsProps {
   hoverColor: string | null;
   setSectionBgImage: (img: string | null) => void;
   sectionBgImage: string | null;
+  setTitleColor: (color: string | null) => void;
+  titleColor: string | null;
 }
 
-const FunFacts: React.FC<FunFactsProps> = ({ setHoverColor, hoverColor, setSectionBgImage, sectionBgImage }) => {
+const FunFacts: React.FC<FunFactsProps> = ({ setHoverColor, hoverColor, setSectionBgImage, sectionBgImage, setTitleColor, titleColor }) => {
+
+  const handleMouseEnter = useCallback((fact: FunFact) => {
+    setHoverColor(fact.bgColor);
+    setSectionBgImage(fact.sectionBgImage || null);
+    setTitleColor(fact.titleColor || null);
+  }, []);
+  
+  const handleMouseLeave = useCallback(() => {
+    setHoverColor(null);
+    setSectionBgImage(null);
+    setTitleColor(null);
+  }, []);
+
   return (
     <section
       className="fun-facts-section"
@@ -63,20 +81,15 @@ const FunFacts: React.FC<FunFactsProps> = ({ setHoverColor, hoverColor, setSecti
           : hoverColor || '#646cff'
       }}
     >
-      <h2>Fun Facts About Me</h2>
-      <div className="flip-cards-container">
+      <h2 style={titleColor ? { color: titleColor } : undefined}>
+        Fun Facts About Me
+      </h2>      <div className="flip-cards-container">
         {funFacts.map((fact, index) => (
           <div
             className="flip-card"
             key={index}
-            onMouseEnter={() => {
-              setHoverColor(fact.bgColor);
-              setSectionBgImage(fact.sectionBgImage || null);
-            }}
-            onMouseLeave={() => {
-              setHoverColor(null);
-              setSectionBgImage(null);
-            }}
+            onMouseEnter={() => handleMouseEnter(fact)}
+            onMouseLeave={handleMouseLeave}
           >
             <div className="flip-card-inner">
               <div className={`flip-card-front ${fact.backgroundImage}`}>
