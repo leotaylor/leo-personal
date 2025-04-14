@@ -16,7 +16,7 @@ const TechUsed: React.FC = () => {
 
   return (
     <div className="container text-center my-5">
-      <h1 className="mb-4">Tech Used</h1>
+      <h1 className="mb-4 header">Tech Used</h1>
       <div className="row">
         {techList.map((tech, index) => (
           <div key={index} className="col-md-3 col-sm-6 col-6 mb-4 techImage">

@@ -35,6 +35,9 @@ h1.name {
   -webkit-text-fill-color: transparent;
 }
 
+h1.spash-desc {
+  color: #ffffff;
+}
 
 @media (min-width: 768px) {
   section {
