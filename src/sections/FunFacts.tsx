@@ -1,4 +1,7 @@
-import React, {useCallback} from 'react';
+import React, {useCallback, useRef} from 'react';
+import { useVisitedSections } from '../context/VisitedSectionsContext';
+import { useInView } from '../hooks/useInView';
+
 import '../styles/FunFacts.css';
 
 type FunFact = {
@@ -58,6 +61,10 @@ interface FunFactsProps {
 }
 
 const FunFacts: React.FC<FunFactsProps> = ({ setHoverColor, hoverColor, setSectionBgImage, sectionBgImage, setTitleColor, titleColor }) => {
+  const { markVisited } = useVisitedSections();
+  const ref = useRef<HTMLElement>(null);
+
+  useInView(ref, () => markVisited('funFacts'));
 
   const handleMouseEnter = useCallback((fact: FunFact) => {
     setHoverColor(fact.bgColor);
@@ -75,6 +82,7 @@ const FunFacts: React.FC<FunFactsProps> = ({ setHoverColor, hoverColor, setSecti
     <section
       className="fun-facts-section"
       id="funFacts"
+      ref={ref}
       style={{
         background: sectionBgImage
           ? `${hoverColor || '#646cff'} url(${sectionBgImage}) center / cover no-repeat`
