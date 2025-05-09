@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { useVisitedSections } from '../context/VisitedSectionsContext';
+import { useInView } from '../hooks/useInView';
 import '../styles/About.css';
 
 const About: React.FC = () => {
+  const { markVisited } = useVisitedSections();
+  const ref = useRef<HTMLElement>(null);
+
+  useInView(ref, () => markVisited('about'));
+
+
   return (
-    <section id="about" className="about-section">
+    <section id="about" className="about-section" ref={ref}>
       <div className="about-content">
         <div className="about-header">
           <h2>About Me</h2>
