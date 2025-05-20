@@ -1,17 +1,11 @@
 .sigil-container {
-  position: fixed;
-  top: 8rem;
-  right: 1rem;
   width: 120px;
-  height: 120px;
-  pointer-events: none; /* so it never blocks clicks */
-  z-index: 999;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.sigil-svg {
-  width: 100%;
-  height: 100%;
-}
 
 .sigil-line {
   stroke: #fff;
@@ -21,4 +15,17 @@
 
 .sigil-line.base {
   stroke: #bbb;
+} 
+
+.sigil-svg {
+  width: 100%;
+  height: auto;
+  transform: scale(0.95);
+  overflow: visible;
+}
+
+.sigil-svg path {
+  stroke-dashoffset: 200;
+  stroke-dasharray: 200;
+  transition: stroke-dashoffset 0.5s ease;
 }

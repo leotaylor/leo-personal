@@ -1,4 +1,3 @@
-// src/components/SigilBuilder.tsx
 import React from 'react';
 import { animated, useSpring } from '@react-spring/web';
 import { useVisitedSections } from '../context/VisitedSectionsContext';
@@ -7,80 +6,72 @@ import '../styles/SigilBuilder.css';
 const SigilBuilder: React.FC = () => {
   const { visited } = useVisitedSections();
 
-  // About segment (horizontal)
-  const aboutSpring = useSpring({
-    x2: visited.has('about') ? 90 : 10,
+  const lSpring = useSpring({
+    strokeDashoffset: visited.has('about') ? 0 : 200,
     opacity: visited.has('about') ? 1 : 0,
     config: { tension: 120, friction: 20 },
   });
 
-  // Tech segment (vertical)
-  const techSpring = useSpring({
-    y2: visited.has('tech') ? 10 : 90,
+  const eSpring = useSpring({
+    strokeDashoffset: visited.has('tech') ? 0 : 200,
     opacity: visited.has('tech') ? 1 : 0,
     config: { tension: 120, friction: 20 },
   });
 
-  // Testimonials segment (top-left → center)
-  const testimonialsSpring = useSpring({
-    x2: visited.has('testimonials') ? 50 : 10,
-    y2: visited.has('testimonials') ? 50 : 10,
-    opacity: visited.has('testimonials') ? 1 : 0,
-    config: { tension: 120, friction: 20 },
-  });
-
-  // Fun Facts segment (bottom-right → center)
-  const funFactsSpring = useSpring({
-    x1: visited.has('funFacts') ? 50 : 90,
-    y1: visited.has('funFacts') ? 50 : 90,
+  const oSpring = useSpring({
+    strokeDashoffset: visited.has('funFacts') ? 0 : 200,
     opacity: visited.has('funFacts') ? 1 : 0,
     config: { tension: 120, friction: 20 },
   });
 
+  const allVisited =
+    visited.has('about') && visited.has('tech') && visited.has('funFacts');
+
+  const flourishSpring = useSpring({
+    strokeDashoffset: allVisited ? 0 : 300,
+    opacity: allVisited ? 1 : 0,
+    config: { tension: 150, friction: 18 },
+  });
+
   return (
     <div className="sigil-container">
-      <svg viewBox="0 0 100 100" className="sigil-svg">
-        {/* Base horizontal line (always visible) */}
-        {/* <line x1="10" y1="90" x2="90" y2="90" className="sigil-line base" /> */}
-
-        {/* About */}
-        <animated.line
-          x1="10"
-          y1="90"
-          x2={aboutSpring.x2}
-          y2="90"
-          style={{ opacity: aboutSpring.opacity }}
-          className="sigil-line"
+      <svg
+        viewBox="0 -10 300 130"
+        className="sigil-svg"
+        fill="none"
+        stroke="white"
+        strokeWidth="8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        {/* L */}
+        <animated.path
+          d="M20 10 V90 H80"
+          strokeDasharray="200"
+          style={lSpring}
         />
 
-        {/* Tech */}
-        <animated.line
-          x1="90"
-          y1="90"
-          x2="90"
-          y2={techSpring.y2}
-          style={{ opacity: techSpring.opacity }}
-          className="sigil-line"
+        {/* E */}
+        <animated.path
+          d="M120 10 H180 M120 50 H160 M120 90 H180 M120 10 V90"
+          strokeDasharray="200"
+          style={eSpring}
         />
 
-        {/* Testimonials */}
-        <animated.line
-          x1="10"
-          y1="10"
-          x2={testimonialsSpring.x2}
-          y2={testimonialsSpring.y2}
-          style={{ opacity: testimonialsSpring.opacity }}
-          className="sigil-line"
+        {/* O */}
+        <animated.circle
+          cx="255"
+          cy="55"
+          r="40"
+          strokeDasharray="251.2"
+          style={oSpring}
         />
 
-        {/* Fun Facts */}
-        <animated.line
-          x1={funFactsSpring.x1}
-          y1={funFactsSpring.y1}
-          x2="90"
-          y2="10"
-          style={{ opacity: funFactsSpring.opacity }}
-          className="sigil-line"
+        {/* Final flourish (a swirl/curve under the word) */}
+        <animated.path
+          d="M10 118 Q150 78 290 118"
+          strokeDasharray="300"
+          style={flourishSpring}
         />
       </svg>
     </div>
