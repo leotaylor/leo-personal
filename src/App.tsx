@@ -10,7 +10,7 @@ import FunFacts from './sections/FunFacts';
 import Blog from './sections/Blog';
 import Footer from './components/Footer';
 import Kirby from './components/Kirby';
-import SigilBuilder from './components/SigilBuilder';
+// import SigilBuilder from './components/SigilBuilder';
 
 import './styles/global.css';
 import './index.css';
@@ -24,7 +24,7 @@ const App: React.FC = () => {
   return (
     <Router>
       <Header />
-      <SigilBuilder />
+      {/* <SigilBuilder /> */}
       <main>
         <Kirby />
         <Routes>

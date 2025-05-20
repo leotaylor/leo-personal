@@ -1,44 +1,13 @@
-/* .sticky-header {
-  position: sticky;
-  top: 0;
-  background: #ffffffcc;
-  backdrop-filter: blur(10px);
-  padding: 1rem 2rem;
-  z-index: 1000;
-  border-bottom: 1px solid #e0e0e0;
-}
-
-.nav-links {
-  display: flex;
-  gap: 1.5rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  justify-content: center;
-}
-
-.nav-links a,
-.nav-links .react-scroll {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  transition: color 0.3s ease;
-  cursor: pointer;
-}
-
-.nav-links a:hover,
-.nav-links .react-scroll:hover {
-  color: #646cff;
-} */
-
 .sticky-header {
-  position: sticky;
+  position: fixed;
   top: 0;
-  background: #ffffffcc;
+  left: 0;
+  right: 0;
+  background: #1e1e1ecc;
   backdrop-filter: blur(10px);
   padding: 1rem 2rem;
   z-index: 1000;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid #1e1e1e;
 }
 
 .nav-wrapper {
@@ -64,7 +33,7 @@
 .nav-links a,
 .nav-links .react-scroll {
   text-decoration: none;
-  color: #333;
+  color: #fff;
   font-weight: 500;
   transition: color 0.3s ease;
   cursor: pointer;
@@ -92,7 +61,7 @@
 .hamburger .bar {
   width: 25px;
   height: 3px;
-  background-color: #333;
+  background-color: white;
   transition: transform 0.3s ease;
 }
 
@@ -112,7 +81,7 @@
   position: absolute;
   top: 100%;
   right: 0;
-  background: #fff;
+  background: #ffffffcc;
   padding: 1rem;
   flex-direction: column;
   display: none;
@@ -134,5 +103,6 @@
 
 .nav-logo img {
   max-height: 50px;
-  width: 100%;
+  /* width: 100%; */
+  object-fit: contain;
 }
