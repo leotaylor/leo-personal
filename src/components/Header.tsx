@@ -35,12 +35,8 @@ const Header: React.FC = () => {
   return (
     <header className="sticky-header">
       <nav className="nav-wrapper">
-        {/* <div className="nav-logo"><img src='/assets/leologo2t.png'/></div> */}
-                <div className="nav-logo"><SigilBuilder/></div>
-
-
+        <div className="nav-logo"><SigilBuilder /></div>
         <ul className="nav-links desktop">{navLinks}</ul>
-
         <div className="hamburger" onClick={toggleMenu}>
           <div className={`bar ${isOpen ? 'open' : ''}`}></div>
           <div className={`bar ${isOpen ? 'open' : ''}`}></div>
